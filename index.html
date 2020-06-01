@@ -131,7 +131,21 @@
                 'circle-radius': 8,
                 'circle-color': "red"
               }
+              
             });
+            
+            map.addLayer({
+id: 'cluster-count',
+type: 'symbol',
+source: 'earthquakes',
+filter: ['has', 'point_count'],
+layout: {
+'text-field': '{point_count_abbreviated}',
+'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+'text-size': 12
+}
+});
+            
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
