@@ -133,19 +133,7 @@
               }
               
             });
-            
-            map.addLayer({
-id: 'cluster-count',
-type: 'symbol',
-source: 'earthquakes',
-filter: ['has', 'point_count'],
-layout: {
-'text-field': '{point_count_abbreviated}',
-'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-'text-size': 12
-}
-});
-            
+                     
 
 
             // When a click event occurs on a feature in the csvData layer, open a popup at the
@@ -156,7 +144,7 @@ layout: {
               //set popup text 
               //You can adjust the values of the popup to match the headers of your CSV. 
               // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV. 
-              var description = `<h3>` + e.features[0].properties.Name + `</h3>` + `<h4>` + `<b>` + `Address: ` + `</b>` + e.features[0].properties.Address + `</h4>` + `<h4>` + `<b>` + `Phone: ` + `</b>` + e.features[0].properties.Phone + `</h4>`;
+              var description = `<h3>` + e.features[0].properties.TYPE + `</h3>` + `<h4>` + `<b>` + `COMPANY: ` + `</b>` + e.features[0].properties.COMPANY + `</h4>` + `<h4>` + `<b>` + `SCORE: ` + `</b>` + e.features[0].properties.SCORE + `</h4>`;
 
               // Ensure that if the map is zoomed out such that multiple
               // copies of the feature are visible, the popup appears
